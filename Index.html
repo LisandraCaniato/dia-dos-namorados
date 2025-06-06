@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Love 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon">
+</head>
+<body>
+  <div id="tela-abertura">
+  <div class="conteudo-abertura">
+    <h1>💌💖</h1>
+    <button onclick="abrirSurpresa()">Abra sua surpresa</button>
+  </div>
+</div>
+<audio id="musica" src="assets/musica.mp3" loop></audio>
+
+<script>
+  function abrirSurpresa() {
+    const tela = document.getElementById('tela-abertura');
+    const musica = document.getElementById('musica');
+    
+    tela.style.display = 'none'; // esconde a tela preta
+    musica.play(); // toca a música
+  }
+  
+</script>
+
+  <header>
+    <h1> Nathan e Lisandra</h1>
+  </header> 
+  
+  </section>
+  <section id="timeline">
+<h2>Nossa história</h2>
+<div class="evento">
+  <span class="data">Retiro da igreja - 5 anos atrás</span>
+  <p class="paragrafo">Quem diria que num retiro comum iríamos virar melhores amigos, 
+    nos aproximarmos tanto e nos apaixonarmos
+    e o mais impressionante, todo retiro era uma oportunidade para nos aproximarmos mais, 
+    até criarmos coragem em contarmos um ao outro o que sentiamos... 
+    ainda bem que insisti muito para você ir a praia comigo, aquela viagem mudou tudo entre nós 
+    assim tudo começou de fato, depois de anos nos permitimos viver isso, e foi a melhor decisão que poderíamos ter tomado
+    e agora estamos aqui, a caminho do altar!  </p>
+</div>
+  </section>
+  <section id="quiz">
+    <h2>Quanto me conhece?</h2>
+    <div class="pergunta">
+     <p>Qual é minha comida favorita?</p>
+     <label><input type="radio" name="pergunta1" value="errado">Pizza<br></label>
+     <label><input type="radio" name="pergunta1" value="certo">Japa<br></label>
+     <label><input type="radio" name="pergunta1" value="errado">X-bacon<br></label>
+     <label><input type="radio" name="pergunta1" value="errado">Lasanha<br></label>
+    </div>
+    <div class="pergunta">
+      <p>Qual é minha cor favorita?</p>
+      <label><input type="radio" name="pergunta2" value="errado">Amarelo<br></label>
+      <label><input type="radio" name="pergunta2" value="errado">Azul<br></label>
+      <label><input type="radio" name="pergunta2" value="certo">Roxo<br></label>
+      <label><input type="radio" name="pergunta2" value="errado">Verde<br></label>
+    </div>
+    <div class="pergunta">
+    <p>Qual é meu filme ou série preferido(a)?</p>
+    <label><input type="radio" name="pergunta3" value="errado">Teen wolf<br></label>
+    <label><input type="radio" name="pergunta3" value="errado">Pretty litlle liars<br></label>
+    <label><input type="radio" name="pergunta3" value="certo">Soy Luna<br></label>
+    <label><input type="radio" name="pergunta3" value="errado">Harry Potter<br></label>
+    </div>
+    <div class="pergunta">
+    <p>Qual foi nosso primeiro rolê juntos?</p>
+    <label><input type="radio" name="pergunta4" value="errado">Praia<br></label>
+    <label><input type="radio" name="pergunta4" value="errado">Parque<br></label>
+    <label><input type="radio" name="pergunta4" value="errado">Cinema<br></label>
+    <label><input type="radio" name="pergunta4" value="certo">Parque de diversões<br></label>
+    </div>
+    <div class="pergunta">
+      <p>Qual foi a data oficial do pedido de namoro?</p>
+      <label><input type="radio" name="pergunta5" value="errado">10/09/2022<br></label>
+      <label><input type="radio" name="pergunta5" value="errado">01/01/2023<br></label>
+      <label><input type="radio" name="pergunta5" value="errado">14/02/2023<br></label>
+      <label><input type="radio" name="pergunta5" value="certo">22/10/2024<br></label>
+    </div>
+    <button onclick="verificarRespostas()">Ver Resultado</button>
+  <p id="resultadoQuiz"></p>
+</section>
+  </section>
+  <section id="cartinha">
+  <h2>Uma mensagem para você 💌</h2>
+  <div id="envelope-container">
+    <div id="envelope" onClick="abrirCarta()">
+    <img src="images/envelope-fechado.png" alt="Envelope fechado">
+    
+  </div>
+  <div id="carta">
+    <button onclick="fecharCarta()" id="btn-fechar">✖</button>
+  
+    <p>
+      Oi meu amor, espero que tenha gostado do presente, é um privilégio passar esse dia dos namorados ao seu lado,
+      e saber que eu passarei o resto da vida ao seu lado, eu amo você e estarei sempre aqui para você, te amo muito meu amor.
+      Obrigada por todas as coisas que já fez por mim e que ainda faz, origada por quem você é comigo e por todo cuidado que tem comigo,
+     feliz dia dos namorados!
+    </p>
+  </div>
+  </div>
+  <button onclick="abrirCarta()">Clique aqui para abrir a carta</button>
+</section>
+<section id="carrossel">
+  <script src="script.js"></script>
+  <div class="carrossel-container">
+  <div class="carrossel" id="carrossel">
+    <img src="images/foto1.jpg">
+    <img src="images/foto2.jpg">
+    <img src="images/foto3.jpg">
+    <img src="images/foto4.jpg">
+    <img src="images/foto5.jpg">
+    <img src="images/foto6.jpg">
+    <img src="images/foto7.jpg">
+    <img src="images/foto8.jpg">
+    <img src="images/foto9.jpg">
+    <img src="images/foto10.jpg">
+    <img src="images/foto11.jpg">
+    <img src="images/foto12.jpg">
+    <img src="images/foto13.jpg">
+    <img src="images/foto14.jpg">
+    <img src="images/foto15.jpg">    
+  </div>
+  </div>
+  </div>
+  </section>
+  <footer>TE AMO <3 </footer>
+</body>
+</html>

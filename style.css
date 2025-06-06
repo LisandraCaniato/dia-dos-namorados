@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root{
+  --claro: #fff;
+  --escuro: #000;
+  --primario: #007bff;
+  --secundario: #600ccf;
+  --sucesso: #f53808;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #ffe6f0, #ffffff);
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+h1,h2{
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+}
+.data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  font-weight: bold;
+  color: darkslategrey;
+}
+.paragrafo{
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: black;
+  border: 1px dashed var(--sucesso);
+  position: relative;
+  padding-left: 30px;
+  border-left: 20px solid #ff4f81;
+  padding: 1rem;
+}
+.paragrafo::before{
+  font-size: 20px;
+  color: #ff4f81;
+  box-shadow: 3px 3px 10px rgba(255, 192, 203, 0.3);
+  content: "📌";
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  font-size: 1.5rem;
+}
+button {
+  background-color: #ff4f81;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 10px auto;
+  display: block;
+}
+button:hover {
+  background-color: #d93d6e;
+}
+#tela-abertura {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #070707;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: column;
+}
+
+#tela-abertura button {
+  background-color: #ff4f81;
+  color: white;
+  font-size: 1.2rem;
+}
+#carrossel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+}
+#carrossel img {
+  height: 300px;
+  scroll-snap-align: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  user-select: none;
+
+}
+#carrossel img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 3px solid #ff4f81;
+}
+
+.timeline .evento {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline .evento::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ff4f81;
+  border-radius: 50%;
+}
+
+/* ❓ QUIZ */
+#quiz {
+  margin-top: 20px;
+}
+
+.pergunta {
+  margin-bottom: 25px;
+  padding: 10px;
+  background-color: #fff0f6;
+  border-radius: 8px;
+}
+
+.pergunta p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#resultado {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 💌 CARTINHA */
+#cartinha {
+  font-style: italic;
+  background-color: #fff0f6;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+#envelope-container {
+  position: relative;
+  width: 300px;
+  margin: 20px auto;
+  cursor: pointer;
+  text-align: center;
+}
+#envelope img {
+  width: 100%;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  user-select: none;
+}
+#carta {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90vw;
+  max-width: 600px;
+  max-height: 80vh;
+  padding: 30px 40px;
+  background: #fff9f7;
+  border: 3px solid #ff4f81;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(255, 79, 129, 0.5);
+  font-family: 'Dancing Script', cursive; /* fonte cursiva */
+  font-size: 1.5rem;
+  color: #b03a58;
+  line-height: 1.6;
+  overflow-y: auto;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#carta.mostra {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  cursor: default;
+}
+
+#btn-fechar {
+  align-self: flex-end;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #b03a58;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+#envelope.aberto img {
+  transform: rotateX(90deg); /* faz sumir, tipo abrir */
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* 📱 RESPONSIVO */
+@media (max-width: 600px) {
+  #carrossel img {
+    height: 200px;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+footer {
+    /* Estilos de fundo e cor do texto */
+    background-color: #ffb6c1; /* Um rosa claro que combina com o tema */
+    color: #8b0000; /* Um vermelho escuro ou bordô para o texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Espaçamento interno em volta do conteúdo */
+    margin-top: 40px; /* Espaçamento acima do rodapé para separá-lo da seção anterior */
+    
+    /* Fontes e tamanho do texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A mesma fonte do corpo ou uma similar */
+    font-size: 1.2rem; /* Tamanho do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+
+    /* Bordas e sombras (opcional) */
+    border-top: 2px solid #ff4f81; /* Uma linha sólida na parte superior */
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1); /* Uma sombra sutil na parte superior */
+
+    /* Para fixar o rodapé na parte inferior da página (se o conteúdo for curto) */
+    /* position: sticky; */ /* ou 'fixed' */
+    /* bottom: 0; */
+    /* width: 100%; */
+    /* z-index: 100; */ /* Garante que o rodapé fique acima de outros elementos */
+}
+
+/* Se você quiser um estilo diferente para o texto dentro do footer */
+footer p {
+    margin-bottom: 5px; /* Espaçamento entre parágrafos no rodapé */
+}
+
+/* Se você adicionar links no footer */
+footer a {
+    color: #b03a58; /* Cor para links no rodapé */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    transition: color 0.3s ease; /* Transição suave na cor */
+}
+
+footer a:hover {
+    color: #d93d6e; /* Cor do link ao passar o mouse */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Estilo para a expressão "TE AMO <3" especificamente, se precisar de algo diferente */
+footer .amor-frase {
+    /* Por exemplo, um tamanho maior ou outra cor */
+    font-size: 1.5rem;
+    color: #ff4f81;
+}
